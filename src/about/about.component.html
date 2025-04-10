@@ -1,0 +1,47 @@
+<section class="about-container">
+    <header class="about-header">
+        <h1>The Team</h1>
+        <p class="subtitle">The people who make it all work</p>
+    </header>
+
+    <div class="navigation-buttons">
+        <a 
+            routerLink="/home"
+            href="http://boise.cs.colostate.edu:4260/home"
+            class="nav-button home-button"
+            aria-label="Navigate to Home Page"
+            target="_self"
+        >
+            <div class="button-content">
+                <h3>Home</h3>
+            </div>
+        </a>
+
+        <a
+            routerLink="/color"
+            class="nav-button color-button"
+            aria-label="Navigate to Color Coordinate Generator"
+        >
+            <div class="button-content">
+                <h3>Color Coordinate</h3>
+            </div>
+        </a>
+    </div>
+
+    <div class="team">
+        <div *ngFor="let member of config.teamMembers" class="member-card">
+            <div class="member-info">
+                <h2>{{ member.name }}</h2>
+                <div class="avatar-container">
+                    <img [src]="member.avatar" [alt]="member.name + ' avatar'" class="avatar">
+                </div>
+                <p class="bio">{{ member.bio }}</p>
+            </div>
+            <div class="contact">
+                <span *ngIf="member.email" class="email">
+                    <i class="icons">Email:</i> {{ member.email }}
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -87,7 +87,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/about/images/Hridaya's_picture.JPG"
             ],
             "styles": [
               "src/styles.css"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e82ca991-a649-4193-8daa-6f06f206f787"
   }
 }

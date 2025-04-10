@@ -1,0 +1,112 @@
+.about-container {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    order: 2;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    /*Add color*/
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    /*Add color*/
+}
+
+.team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    order: 3;
+}
+
+.member-card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5);
+}
+
+.avatar-container {
+    overflow: hidden;
+}
+
+.avatar {
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-info h2 {
+    margin-bottom: 0.5rem;
+    /*Add color*/
+}
+
+.bio {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    /*Add color*/
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.email {
+    font-size: 1rem;
+    /*Add color*/
+}
+
+.icons {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    order: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-button {
+    padding: 1.5rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.button-content h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    /*Add color*/
+}
+
+.color-button:hover {
+    transform: translateY(-3px);
+    /*Add color*/
+}
