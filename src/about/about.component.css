@@ -136,3 +136,44 @@
     transform: translateY(-3px);
     background-color: #441D09;
 }
+
+.accessibility {
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: center;
+    order: 4;
+}
+
+.accessibility h2 {
+    color: #042b37;
+}
+
+.accessibility p {
+    color: #34343C;
+}
+  
+.contrast-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+ }
+  
+.contrast-chip {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid currentColor;
+}
+  
+.contrast-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+

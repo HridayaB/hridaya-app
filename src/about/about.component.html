@@ -44,4 +44,21 @@
             </div>
         </div>
     </div>
+
+    <div class="accessibility">
+        <h2>Color Accessibility</h2>
+        <p>All color combinations meet WCAG AA and WCAG AAA requirements:</p>
+        
+        <div class="contrast-links">
+          <a *ngFor="let contrast of config.contrastLinks" 
+             [href]="contrast.url" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="contrast-chip"
+             [style.background]="contrast.bgColor"
+             [style.color]="contrast.textColor">
+             {{ contrast.textColor }} on {{ contrast.bgColor }} ({{ contrast.ratio }}:1)
+          </a>
+        </div>
+    </div>
 </section>
