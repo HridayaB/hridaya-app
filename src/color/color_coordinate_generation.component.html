@@ -1,0 +1,53 @@
+<section class="color-coordinator-container">
+    <header class="color-header">
+        <h1>Color Coordinate Generator</h1>
+    </header>
+
+    <div class="navigation-buttons">
+        <a 
+            routerLink="/home"
+            href="http://boise.cs.colostate.edu:4260/home"
+            class="nav-button home-button"
+            aria-label="Navigate to Home Page"
+            target="_self"
+        >
+            <div class="button-content">
+                <h3>Home</h3>
+            </div>
+        </a>
+
+        <a
+            routerLink="/about"
+            href="http://boise.cs.colostate.edu:4260/about"
+            class="nav-button about-button"
+            aria-label="Navigate to About Page"
+            target="_self"
+        >
+            <div class="button-content">
+                <h3>About</h3>
+            </div>
+        </a>
+    </div>
+
+    <form [formGroup]="coordinateForm" (ngSubmit)="onSubmit()" class="form-container">
+        <div class="form-group">
+            <label for="rows">Rows (1-1000)</label>
+            <input type="number" formControlName="rows" min="1" max="1000">
+        </div>
+        <div class="form-group">
+            <label for="columns">Columns (1-702)</label>
+            <input type="number" formControlName="columns" min="1" max="702">
+        </div>
+        <div class="form-group">
+            <label for="colors">Colors</label>
+            <input type="number" formControlName="colors" min="1" max="10">
+        </div>
+
+        <button type="submit" class="generate-button">Generate</button>
+    </form>
+
+    <div *ngIf="colorOptions.length > 0" class="color-options">
+        <h3>Selected Colors</h3>
+        <div class="color-box" *ngFor="let color of colorOptions" [style.background]="color"></div>
+    </div>
+</section>
