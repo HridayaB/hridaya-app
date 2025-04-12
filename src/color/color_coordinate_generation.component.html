@@ -62,6 +62,10 @@
         <div class="color-box" *ngFor="let color of colorOptions" [style.background]="color"></div>
     </div>
 
+    <div *ngIf="showTables" class="print">
+        <button (click)="printPage()" class="print-button">Print Page</button>
+    </div>
+
     <div class="accessibility">
         <h2>Color Accessibility</h2>
         <p>All color combinations meet WCAG AA and WCAG AAA requirements:</p>
