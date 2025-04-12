@@ -9,5 +9,4 @@ import { homeConfig } from "./home.config";
 
 export class HomeComponent {
     config = homeConfig;
-    logoPath = './src/assets/images/group_project_logo.png';
 }
