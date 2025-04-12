@@ -7,6 +7,7 @@
     text-align: center;
     padding: 2rem;
     box-sizing: border-box;
+    background-color: #d6c7a2;
 }
 
 .header {
@@ -17,13 +18,13 @@
 .header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    /*Add color*/
+    color: #003049;
 }
 
 .tagline {
     font-size: 1.2rem;
     max-width: 600px;
-    /*Add color*/
+    color: #003049;
 }
 
 .navigation-buttons {
@@ -41,6 +42,8 @@
     text-decoration: none;
     transition: all 0.3s ease;
     min-width: 200px;
+    color: white;
+    background-color: #00008B; ;
 }
 
 .button-content h3 {
@@ -50,10 +53,11 @@
 
 .about-button:hover {
     transform: translateY(-3px);
-    /*Add color*/
+    background-color: #F77F00;
+    color: #00008B;
 }
 
 .color-button:hover {
     transform: translateY(-3px);
-    /*Add color*/
+    color: #ffffff;
 }
