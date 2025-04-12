@@ -7,5 +7,37 @@ export const aboutConfig = {
             avatar: "https://cs.colostate.edu:4444/~hridayab/Hridaya's_picture.JPG"
         }
         /*Add other members*/    
+    ],
+    contrastLinks: [
+        {
+          textColor: '#55260C',
+          bgColor: '#D4C2AF',
+          ratio: '7.27',
+          url: 'https://webaim.org/resources/contrastchecker/?fcolor=55260C&bcolor=D4C2AF'
+        },
+        {
+          textColor: '#053948',
+          bgColor: '#D4C2AF',
+          ratio: '7.2',
+          url: 'https://webaim.org/resources/contrastchecker/?fcolor=053948&bcolor=D4C2AF'
+        },
+        {
+          textColor: '#34343C',
+          bgColor: '#D4C2AF',
+          ratio: '7.12',
+          url: 'https://webaim.org/resources/contrastchecker/?fcolor=34343C&bcolor=D4C2AF'
+        },
+        {
+          textColor: '#042B37',
+          bgColor: '#D4C2AF',
+          ratio: '8.63',
+          url: 'https://webaim.org/resources/contrastchecker/?fcolor=042B37&bcolor=D4C2AF'
+        },
+        {
+          textColor: '#441D09',
+          bgColor: '#D4C2AF',
+          ratio: '8.51',
+          url: 'https://webaim.org/resources/contrastchecker/?fcolor=441D09&bcolor=D4C2AF'
+        }
     ]
 };

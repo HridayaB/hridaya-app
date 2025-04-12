@@ -1,8 +1,21 @@
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background-color: #D4C2AF;
+}
+  
 .about-container {
     display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    position: relative;
 }
 
 .about-header {
@@ -14,12 +27,12 @@
 .about-header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    /*Add color*/
+    color: #34343C;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    /*Add color*/
+    color: #55260C;
 }
 
 .team {
@@ -34,6 +47,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    /*background-color: #34343C;*/
 }
 
 .member-card:hover {
@@ -54,13 +68,13 @@
 
 .member-info h2 {
     margin-bottom: 0.5rem;
-    /*Add color*/
+    color: #053948;
 }
 
 .bio {
     line-height: 1.5;
     margin-bottom: 1rem;
-    /*Add color*/
+    color: #34343C;
 }
 
 .contact {
@@ -71,12 +85,13 @@
 
 .email {
     font-size: 1rem;
-    /*Add color*/
+    color: #053948;
 }
 
 .icons {
     font-size: 1rem;
     vertical-align: middle;
+    color: #55260C;
 }
 
 .navigation-buttons {
@@ -96,17 +111,69 @@
     min-width: 200px;
 }
 
+.home-button {
+    background-color: #053948;
+    color: #D4C2AF;
+}
+
+.color-button {
+    background-color: #55260C; 
+    color: #D4C2AF;
+}
+
 .button-content h3 {
     margin: 0;
     font-size: 1.3rem;
+    color: #D4C2AF;
 }
 
 .home-button:hover {
     transform: translateY(-3px);
-    /*Add color*/
+    background-color: #042b37;
 }
 
 .color-button:hover {
     transform: translateY(-3px);
-    /*Add color*/
+    background-color: #441D09;
 }
+
+.accessibility {
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: center;
+    order: 4;
+}
+
+.accessibility h2 {
+    color: #042b37;
+}
+
+.accessibility p {
+    color: #34343C;
+}
+  
+.contrast-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+ }
+  
+.contrast-chip {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid currentColor;
+}
+  
+.contrast-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
