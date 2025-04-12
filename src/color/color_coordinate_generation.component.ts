@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { colorConfig } from './color_coordinate_generation.config';
 
 @Component({
     selector: 'app-color-coordinate-generation',
@@ -10,6 +11,7 @@ import { RouterModule } from '@angular/router';
     styleUrl: './color_coordinate_generation.component.css'
 })
 export class ColorCoordinateGenerationComponent {
+    config = colorConfig;
     coordinateForm: FormGroup;
     showTables = false;
     colorOptions: any[] = [];
