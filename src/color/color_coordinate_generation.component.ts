@@ -1,10 +1,11 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-color-coordinate-generation',
-    imports: [CommonModule, ReactiveFormsModule],
+    imports: [CommonModule, ReactiveFormsModule, RouterModule],
     templateUrl: './color_coordinate_generation.component.html',
     styleUrl: './color_coordinate_generation.component.css'
 })
