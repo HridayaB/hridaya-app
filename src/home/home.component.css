@@ -7,7 +7,7 @@
     text-align: center;
     padding: 2rem;
     box-sizing: border-box;
-    background-color: #FCF9F2;
+    background-color: #d6c7a2;
 }
 
 .header {
@@ -43,7 +43,7 @@
     transition: all 0.3s ease;
     min-width: 200px;
     color: white;
-    background-color: #D62828; ;
+    background-color: #00008B; ;
 }
 
 .button-content h3 {
@@ -54,7 +54,7 @@
 .about-button:hover {
     transform: translateY(-3px);
     background-color: #F77F00;
-    color: #D62828;
+    color: #00008B;
 }
 
 .color-button:hover {
