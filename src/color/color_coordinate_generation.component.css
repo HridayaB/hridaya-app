@@ -93,6 +93,40 @@ input {
     border-radius: 4px;
 }
 
+.color-selection-table {
+    margin-top: 20px;
+}
+
+.color-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.color-table tr {
+    border-bottom: 1px solid black;
+}
+
+.color-table td {
+    padding: 10px;
+    vertical-align: middle;
+    border-right: 1px solid black;
+}
+
+.right-cell {
+    width: 80%;
+}
+
+.left-cell {
+    width: 20%;
+    padding: 4px;
+    margin-left: 10px;
+}
+
+.color-radio {
+    vertical-align: middle;
+}
+
 .navigation-buttons {
     order: 1;
     display: flex;
