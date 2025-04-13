@@ -1,12 +1,12 @@
 import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { colorConfig } from './color_coordinate_generation.config';
 
 @Component({
     selector: 'app-color-coordinate-generation',
-    imports: [CommonModule, ReactiveFormsModule, RouterModule],
+    imports: [CommonModule, ReactiveFormsModule, RouterModule, FormsModule],
     templateUrl: './color_coordinate_generation.component.html',
     styleUrl: './color_coordinate_generation.component.css'
 })
@@ -14,8 +14,11 @@ export class ColorCoordinateGenerationComponent {
     config = colorConfig;
     coordinateForm: FormGroup;
     showTables = false;
-    colorOptions: any[] = [];
     colorPalette = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'brown', 'black', 'teal'];
+    colorOptions = this.colorPalette.map((color, index) => ({
+        color: color,
+        selected: index === 0
+    }));
     columnHeaders: string[] = [];
     rowIndices: number[] = [];
     selectedColorIndex = 0;
@@ -102,5 +105,22 @@ export class ColorCoordinateGenerationComponent {
 
     printPage() {
         window.print();
+    }
+
+    availableColors(currentIndex: number): string[] {
+        return this.colorPalette.filter((color) => {
+        const usedColors = this.colorOptions
+            .filter((_, i) => i !== currentIndex)
+            .map((opt) => opt.color);
+        return !usedColors.includes(color) || this.colorOptions[currentIndex].color === color;
+        });
+    }
+    
+    isColorUsed(color: string): boolean {
+        return this.colorOptions.some((opt) => opt.color === color);
+    }
+    
+    onColorChange(newColor: string, index: number) {
+        this.colorOptions[index].color = newColor;
     }
 }
