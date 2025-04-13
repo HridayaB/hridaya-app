@@ -71,6 +71,7 @@
                   class="color-radio"
                 />
                 <select
+                  *ngIf="colorOption.selected"
                   [ngModel]="colorOption.color"
                   (ngModelChange)="onColorChange($event, i)"
                   [attr.aria-label]="'Choose a color for option ' + (i + 1)"
