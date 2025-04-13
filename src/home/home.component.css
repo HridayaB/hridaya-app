@@ -27,6 +27,11 @@
     color: #003049;
 }
 
+.logo {
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
 .navigation-buttons {
     display: flex;
     gap: 2rem;
