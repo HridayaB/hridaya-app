@@ -3,6 +3,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } 
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { colorConfig } from './color_coordinate_generation.config';
+import { throws } from 'assert';
+
+interface CellCoordinate {
+    row: number;
+    column: string;
+}
 
 @Component({
     selector: 'app-color-coordinate-generation',
@@ -22,6 +28,8 @@ export class ColorCoordinateGenerationComponent {
     columnHeaders: string[] = [];
     rowIndices: number[] = [];
     selectedColorIndex = 0;
+    paintingTableData: any[][] = [];
+    clickedCell: CellCoordinate | null = null;
 
     constructor(private fb: FormBuilder) {
         this.coordinateForm = this.fb.group({
@@ -78,13 +86,34 @@ export class ColorCoordinateGenerationComponent {
         const numRows = this.coordinateForm.value.rows;
         const numColumns = this.coordinateForm.value.columns;
 
-        this.columnHeaders = [''];
-        for (let i = 0; i < numColumns; i++) {
-            this.columnHeaders.push(this.getExcelColumnName(1));
+        this.columnHeaders = [];
+        for (let i = 1; i <= numColumns; i++) {
+            this.columnHeaders.push(this.getExcelColumnName(i));
         }
 
-        this.rowIndices = Array.from({ length: numRows }, (_, i) => i + 1);
+        this.paintingTableData = [];
+        const headerRow = [''].concat(this.columnHeaders);
+        this.paintingTableData.push(headerRow);
+        
+        
+        for (let row = 1; row <= numRows; row++) {
+            const rowData = [row.toString()]; 
+            for (let col = 1; col <= numColumns; col++) {
+                rowData.push('');
+            }
+            this.paintingTableData.push(rowData);
+        }
     }
+
+    onCellClick(row: number, col: number) {
+        if (row === 0 || col === 0) return;
+    
+        const cellCoord = {
+            row: row, 
+            column: this.paintingTableData[0][col]
+        };
+        alert(`${cellCoord.column}${cellCoord.row}`);
+      }
 
     private getExcelColumnName(num: number): string {
         let columnName = '';

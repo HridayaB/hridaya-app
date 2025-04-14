@@ -123,6 +123,51 @@ input {
     vertical-align: middle;
 }
 
+.painting-table-container {
+    margin-top: 2rem;
+}
+
+.painting-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.painting-table td {
+    border: 1px solid #C7CEE6;
+    padding: 8px;
+    text-align: center;
+}
+
+.painting-table .header-cell {
+    background-color: #C7CEE6;
+    font-weight: bold;
+}
+
+.painting-table .clickable-cell {
+    cursor: pointer;
+}
+
+.painting-table .clickable-cell:hover {
+    background-color: #C7CEE6;
+}
+
+.cell-coordinate-display {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.painting-table {
+    width: 100%;
+    border: 1px solid #2B3B5F;
+    margin: 20px 0;
+}
+
+.painting-table td {
+    border: 1px solid #2B3B5F;
+    padding: 8px;
+}
+
 .navigation-buttons {
     order: 1;
     display: flex;
