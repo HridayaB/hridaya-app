@@ -140,6 +140,18 @@
     background-color: #441D09;
 }
 
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
 .accessibility {
     margin: 3rem auto;
     max-width: 800px;

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { colorConfig } from './color_coordinate_generation.config';
 import { throws } from 'assert';
+import { HostBinding } from '@angular/core';
 
 interface CellCoordinate {
     row: number;
@@ -151,5 +152,9 @@ export class ColorCoordinateGenerationComponent {
     
     onColorChange(newColor: string, index: number) {
         this.colorOptions[index].color = newColor;
+    }
+
+    @HostBinding('class.tables-visible') get tablesVisible() {
+        return this.showTables;
     }
 }
