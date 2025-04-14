@@ -4,16 +4,21 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    min-height: 150vh;
+    min-height: 100vh;
     background-color: #C7CEE6;
+}
+
+:host(.tables-visible) {
+right: auto;
+width: auto;
+min-width: 100vw;
 }
   
 .color-coordinate-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
-    position: relative;
+    padding-bottom: 4rem;
 }
 
 .color-header {
@@ -125,22 +130,27 @@ input {
 
 .painting-table-container {
     margin-top: 2rem;
+    display: table;
+    background-color: inherit;
 }
 
 .painting-table {
-    width: 100%;
+    width: 99%;
     border-collapse: collapse;
-    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: inherit;
 }
 
 .painting-table td {
-    border: 1px solid #C7CEE6;
+    border: 1px solid black;
     padding: 8px;
     text-align: center;
 }
 
 .painting-table .header-cell {
-    background-color: #C7CEE6;
+    background-color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -149,7 +159,7 @@ input {
 }
 
 .painting-table .clickable-cell:hover {
-    background-color: #C7CEE6;
+    background-color: #283E3E;
 }
 
 .cell-coordinate-display {
@@ -251,7 +261,6 @@ input {
     }
 
     body::before {
-        content: url('https://cs.colostate.edu:4444/~hridayab/group_project_logo');
         position: fixed;
         top: 10px;
         left: 10px;
@@ -263,8 +272,8 @@ input {
     }
 
     @page {
-    size: auto;
-    margin: 5mm;
+        size: auto;
+        margin: 5mm;
     }
 }
 
