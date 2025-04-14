@@ -11,8 +11,8 @@ export const aboutConfig = {
            name: 'Levi Ulmer',
            bio: "Hi, i'm Levi Ulmer and I am a second bachelors degree student currently pursuing a degree in Computer Science. I'm currently a career firefighter and rescue technician, and excited to make the transition to my new career.",
            email: 'leviu@colostate.edu',
-           avatar:"https://cs.colostate.edu/~leviu/index.html/Selfie.jpg"
-        }
+           avatar: "https://raw.githubusercontent.com/HridayaB/hridaya-app/master/src/assets/images/Selfie.jpg"
+         }
         /*Add other members*/    
     ],
     contrastLinks: [
