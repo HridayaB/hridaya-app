@@ -1,3 +1,13 @@
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 110vh;
+    background-color: #d6c7a2;
+}
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -7,7 +17,6 @@
     text-align: center;
     padding: 2rem;
     box-sizing: border-box;
-    background-color: #d6c7a2;
 }
 
 .header {
@@ -47,7 +56,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
     min-width: 200px;
-    color: white;
+    color: #d6c7a2;
     background-color: #00008B; ;
 }
 
@@ -58,11 +67,49 @@
 
 .about-button:hover {
     transform: translateY(-3px);
-    background-color: #F77F00;
-    color: #00008B;
+    background-color: #103C39;
 }
 
 .color-button:hover {
     transform: translateY(-3px);
-    color: #ffffff;
+    background-color: #103C39;
+}
+
+.accessibility {
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: center;
+    order: 3;
+}
+
+.accessibility h2 {
+    color: #003049;
+}
+
+.accessibility p {
+    color: #103C39;
+}
+  
+.contrast-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+ }
+  
+.contrast-chip {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid currentColor;
+}
+  
+.contrast-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }

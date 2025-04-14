@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    min-height: 100vh;
+    min-height: 150vh;
     background-color: #C7CEE6;
 }
   
@@ -78,12 +78,6 @@ input {
     background-color: #1C2D2D;
 }
 
-.color-options {
-    margin-top: 2rem;
-    padding: 1.5;
-    border-radius: 8px;
-}
-
 .color-box {
     display: inline-block;
     width: 50px;
@@ -98,9 +92,11 @@ input {
 }
 
 .color-table {
-    width: 100%;
+    width: 99%;
     border-collapse: collapse;
     border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .color-table tr {
@@ -255,8 +251,8 @@ input {
     }
 
     body::before {
-        content: url('https://cs.colostate.edu:4444/~hridayab/group_project_logo.png');
-        position: absolute;
+        content: url('https://cs.colostate.edu:4444/~hridayab/group_project_logo');
+        position: fixed;
         top: 10px;
         left: 10px;
         height: 50px;
@@ -309,4 +305,16 @@ input {
 .contrast-chip:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
 }
