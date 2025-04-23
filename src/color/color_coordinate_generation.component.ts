@@ -15,7 +15,8 @@ interface CellCoordinate {
     selector: 'app-color-coordinate-generation',
     imports: [CommonModule, ReactiveFormsModule, RouterModule, FormsModule],
     templateUrl: './color_coordinate_generation.component.html',
-    styleUrl: './color_coordinate_generation.component.css'
+    styleUrl: './color_coordinate_generation.component.css',
+    standalone: true
 })
 export class ColorCoordinateGenerationComponent {
     config = colorConfig;
@@ -24,13 +25,16 @@ export class ColorCoordinateGenerationComponent {
     colorPalette = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'brown', 'black', 'teal'];
     colorOptions = this.colorPalette.map((color, index) => ({
         color: color,
-        selected: index === 0
+        selected: index === 0,
+        coordinates: [] as string[]
     }));
     columnHeaders: string[] = [];
     rowIndices: number[] = [];
     selectedColorIndex = 0;
     paintingTableData: any[][] = [];
     clickedCell: CellCoordinate | null = null;
+
+    cellColors: { [key: string]: string} ={}
 
     constructor(private fb: FormBuilder) {
         this.coordinateForm = this.fb.group({
@@ -78,7 +82,8 @@ export class ColorCoordinateGenerationComponent {
         for (let i = 0; i < numColors; i++) {
             this.colorOptions.push({
                 selected: i === 0,
-                color: this.colorPalette[i % this.colorPalette.length]
+                color: this.colorPalette[i % this.colorPalette.length],
+                coordinates: [] as string[]
             });
         }
     }
@@ -104,16 +109,27 @@ export class ColorCoordinateGenerationComponent {
             }
             this.paintingTableData.push(rowData);
         }
+
+        this.cellColors = {};
+        this.colorOptions.forEach(opt => opt.coordinates=[]);
     }
 
     onCellClick(row: number, col: number) {
         if (row === 0 || col === 0) return;
+
+        const column = this.paintingTableData[0][col];
+        const key = `${column}${row}`;
+        const selectedColor = this.colorOptions[this.selectedColorIndex].color;
+
+        this.cellColors[key] = selectedColor;
+
+        const colorEntry =  this.colorOptions[this.selectedColorIndex];
+        if (!colorEntry.coordinates.includes(key)){
+            colorEntry.coordinates.push(key);
+            colorEntry.coordinates.sort((a, b) => a.localeCompare(b));
+        }
     
-        const cellCoord = {
-            row: row, 
-            column: this.paintingTableData[0][col]
-        };
-        alert(`${cellCoord.column}${cellCoord.row}`);
+        
       }
 
     private getExcelColumnName(num: number): string {
@@ -157,4 +173,10 @@ export class ColorCoordinateGenerationComponent {
     @HostBinding('class.tables-visible') get tablesVisible() {
         return this.showTables;
     }
+
+    getCellColor(row: number, col: number): string {
+        const column = this.paintingTableData[0][col];
+        const key = `${column}${row}`;
+        return this.cellColors[key] || 'white';
+}
 }
