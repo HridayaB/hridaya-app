@@ -240,6 +240,60 @@ input {
     background-color: #1C2D2D;
 }
 
+.palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.palette button {
+    width: 60px;
+    height: 40px;
+    margin: 0.25rem;
+    border: 2px solid #2B3B5F;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s ease;
+}
+
+.palette button.active {
+    box-shadow: 0 0 0 3px #000;
+    transform: scale(1.05);
+}
+
+.coordinate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.coordinate-table th,
+.coordinate-table td {
+    border: 1px solid #2B3B5F;
+    padding: 8px;
+    text-align: center;
+}
+
+.coordinate-table th {
+    background-color: #2B3B5F;
+    color: #C7CEE6;
+}
+
+.painting-table td {
+    transition: background-color 0.2s;
+}
+
+.painting-table td:hover {
+    opacity: 0.85;
+}
+
+.painting-table td[style*= "background-color"]{
+    color: transparent;
+    user-select: none;
+}
+
 @media print {
     .color-header, .navigation-buttons, .form-container, .print-button, .accessibility, input[type="radio"], select {display: none !important;}
 
