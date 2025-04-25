@@ -112,8 +112,9 @@
             <td *ngFor="let cell of row; let colIndex = index" 
                 (click)="onCellClick(rowIndex, colIndex)"
                 [class.header-cell]="rowIndex === 0 || colIndex === 0"
-                [class.clickable-cell]="rowIndex > 0 && colIndex > 0">
-                {{(rowIndex ===0 || colIndex === 0) ? cell : ''}}
+                [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
+                [style.backgroundColor]="getCellColor(rowIndex, colIndex)">
+                {{(rowIndex === 0 || colIndex === 0) ? cell : ''}}
               
             </td>
           </tr>
