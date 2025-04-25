@@ -146,12 +146,17 @@ input {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+    transition: background-color 0.2s;
+    background-color: white;
+    color: transparent;
+    user-select: none; 
 }
 
 .painting-table .header-cell {
     background-color: black;
     color: white;
     font-weight: bold;
+    user-select: text;
 }
 
 .painting-table .clickable-cell {
@@ -162,20 +167,13 @@ input {
     background-color: #283E3E;
 }
 
+.painting-table td:hover {
+    opacity: 0.85;
+}
+
 .cell-coordinate-display {
     margin-top: 1rem;
     font-style: italic;
-}
-
-.painting-table {
-    width: 100%;
-    border: 1px solid #2B3B5F;
-    margin: 20px 0;
-}
-
-.painting-table td {
-    border: 1px solid #2B3B5F;
-    padding: 8px;
 }
 
 .navigation-buttons {
