@@ -105,26 +105,26 @@
       ></button>
     </div>
 
-    <div *ngIf="showTables" class="painting-table-container">
+    <div *ngIf="showTables" class="grid-wrapper">
       <table class="painting-table">
         <tbody>
           <tr *ngFor="let row of paintingTableData; let rowIndex = index">
             <td *ngFor="let cell of row; let colIndex = index"
-            (click)="onCellClick(rowIndex, colIndex)"
-            [class.header-cell]="rowIndex === 0 || colIndex === 0"
-            [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
-            [style.backgroundColor]="getCellColor(rowIndex, colIndex)"> 
-            {{ (rowIndex === 0 || colIndex === 0) ? cell : '' }}
-        </td>
-        
+                (click)="onCellClick(rowIndex, colIndex)"
+                [class.header-cell]="rowIndex === 0 || colIndex === 0"
+                [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
+                [style.backgroundColor]="getCellColor(rowIndex, colIndex)">
+              {{ (rowIndex === 0 || colIndex === 0) ? cell : '' }}
+            </td>
           </tr>
         </tbody>
       </table>
-      
+    </div>
+
       <div *ngIf="clickedCell" class="cell-coordinate-display">
         {{ clickedCell.column }}{{ clickedCell.row }}
       </div>
-    </div>
+    
 
     <div *ngIf="showTables" class="print">
         <button (click)="printPage()" class="print-button">Print Page</button>
