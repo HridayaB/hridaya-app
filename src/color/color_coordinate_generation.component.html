@@ -109,14 +109,14 @@
       <table class="painting-table">
         <tbody>
           <tr *ngFor="let row of paintingTableData; let rowIndex = index">
-            <td *ngFor="let cell of row; let colIndex = index" 
-                (click)="onCellClick(rowIndex, colIndex)"
-                [class.header-cell]="rowIndex === 0 || colIndex === 0"
-                [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
-                [style.backgroundColor]="getCellColor(rowIndex, colIndex)">
-                {{(rowIndex === 0 || colIndex === 0) ? cell : ''}}
-              
-            </td>
+            <td *ngFor="let cell of row; let colIndex = index"
+            (click)="onCellClick(rowIndex, colIndex)"
+            [class.header-cell]="rowIndex === 0 || colIndex === 0"
+            [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
+            [style.backgroundColor]="getCellColor(rowIndex, colIndex)"> 
+            {{ (rowIndex === 0 || colIndex === 0) ? cell : '' }}
+        </td>
+        
           </tr>
         </tbody>
       </table>

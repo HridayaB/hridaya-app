@@ -143,13 +143,17 @@ input {
 }
 
 .painting-table td {
-    border: 1px solid black;
-    padding: 8px;
+    border: 1px solid #2B3B5F; 
+    width: 40px; 
+    height: 40px;
     text-align: center;
+    vertical-align: middle;
+    background-color: white; 
     transition: background-color 0.2s;
-    background-color: white;
-    color: transparent;
-    user-select: none; 
+    color: transparent; 
+    user-select: none;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 .painting-table .header-cell {
@@ -157,6 +161,7 @@ input {
     color: white;
     font-weight: bold;
     user-select: text;
+    font-size: 16px;
 }
 
 .painting-table .clickable-cell {
