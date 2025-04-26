@@ -114,7 +114,7 @@
                 [class.header-cell]="rowIndex === 0 || colIndex === 0"
                 [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
                 [style.backgroundColor]="getCellColor(rowIndex, colIndex)">
-              {{ (rowIndex === 0 || colIndex === 0) ? cell : '' }}
+                {{ rowIndex === 0 || colIndex === 0 ? cell : paintingTableData[0][colIndex] + rowIndex }}
             </td>
           </tr>
         </tbody>
