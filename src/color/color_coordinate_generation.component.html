@@ -113,8 +113,9 @@
                 (click)="onCellClick(rowIndex, colIndex)"
                 [class.header-cell]="rowIndex === 0 || colIndex === 0"
                 [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
-                [style.backgroundColor]="getCellColor(rowIndex, colIndex)">
-                {{ rowIndex === 0 || colIndex === 0 ? cell : paintingTableData[0][colIndex] + rowIndex }}
+                [style.backgroundColor]="getCellColor(rowIndex, colIndex)"
+                [style.color]="(rowIndex === 0 || colIndex === 0) ? 'white' : 'transparent'">
+                {{ rowIndex === 0 || colIndex === 0 ? cell : '' }}
             </td>
           </tr>
         </tbody>
