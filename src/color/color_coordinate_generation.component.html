@@ -26,6 +26,16 @@
                 <h3>About</h3>
             </div>
         </a>
+
+        <a
+            routerLink="/manage_colors"
+            class="nav-button manage-colors-button"
+            aria-label="Navigate to Color Management"
+        >
+            <div class="button-content">
+                <h3>Manage Colors</h3>
+            </div>
+        </a>
     </div>
 
     <form [formGroup]="coordinateForm" (ngSubmit)="onSubmit()" class="form-container">
