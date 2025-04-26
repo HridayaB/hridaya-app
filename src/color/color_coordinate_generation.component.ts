@@ -175,10 +175,14 @@ export class ColorCoordinateGenerationComponent {
     }
 
     getCellColor(row: number, col: number): string {
+        if (row === 0 || col === 0) {
+            return 'black'; 
+        }
+    
         const column = this.paintingTableData[0][col];
         const key = `${column}${row}`;
         const colorIndex = this.cellColors[key];
-
+    
         return colorIndex !== undefined
             ? this.colorOptions[colorIndex].color
             : 'white';
