@@ -91,29 +91,27 @@ export class ColorCoordinateGenerationComponent {
     private generatePaintingTable() {
         const numRows = this.coordinateForm.value.rows;
         const numColumns = this.coordinateForm.value.columns;
-
-        this.columnHeaders = [];
-        for (let i = 1; i <= numColumns; i++) {
-            this.columnHeaders.push(this.getExcelColumnName(i));
-        }
-
+    
         this.paintingTableData = [];
-        const headerRow = [''].concat(this.columnHeaders);
+    
+        const headerRow = [''];
+        for (let i = 1; i <= numColumns; i++) {
+            headerRow.push(this.getExcelColumnName(i));
+        }
         this.paintingTableData.push(headerRow);
-        
-        
+    
         for (let row = 1; row <= numRows; row++) {
-            const rowData = [row.toString()]; 
+            const rowData = [row.toString()];
             for (let col = 1; col <= numColumns; col++) {
                 rowData.push('');
             }
             this.paintingTableData.push(rowData);
         }
-
+    
         this.cellColors = {};
-        this.colorOptions.forEach(opt => opt.coordinates=[]);
+        this.colorOptions.forEach(opt => opt.coordinates = []);
     }
-
+    
     onCellClick(row: number, col: number) {
         if (row === 0 || col === 0) return;
 
