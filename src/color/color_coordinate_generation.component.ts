@@ -34,7 +34,7 @@ export class ColorCoordinateGenerationComponent {
     paintingTableData: any[][] = [];
     clickedCell: CellCoordinate | null = null;
 
-    cellColors: { [key: string]: string} ={}
+    cellColors: { [key: string]: number} ={}
 
     constructor(private fb: FormBuilder) {
         this.coordinateForm = this.fb.group({
@@ -113,7 +113,7 @@ export class ColorCoordinateGenerationComponent {
         this.cellColors = {};
         this.colorOptions.forEach(opt => opt.coordinates=[]);
     }
-
+    
     onCellClick(row: number, col: number) {
         if (row === 0 || col === 0) return;
 
@@ -121,7 +121,7 @@ export class ColorCoordinateGenerationComponent {
         const key = `${column}${row}`;
         const selectedColor = this.colorOptions[this.selectedColorIndex].color;
 
-        this.cellColors[key] = selectedColor;
+        this.cellColors[key] = this.selectedColorIndex;
 
         const colorEntry =  this.colorOptions[this.selectedColorIndex];
         if (!colorEntry.coordinates.includes(key)){
@@ -175,8 +175,16 @@ export class ColorCoordinateGenerationComponent {
     }
 
     getCellColor(row: number, col: number): string {
+        if (row === 0 || col === 0) {
+            return 'black'; 
+        }
+    
         const column = this.paintingTableData[0][col];
         const key = `${column}${row}`;
-        return this.cellColors[key] || 'white';
-}
+        const colorIndex = this.cellColors[key];
+    
+        return colorIndex !== undefined
+            ? this.colorOptions[colorIndex].color
+            : 'white';
+    }
 }

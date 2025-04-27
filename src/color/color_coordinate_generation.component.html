@@ -1,7 +1,8 @@
 <div class="logo-container">
     <img src="https://raw.githubusercontent.com/HridayaB/hridaya-app/master/src/assets/images/group_project_logo.png" alt="Project Logo" class="logo" />
   </div>
-<section class="color-coordinator-container">
+<section class="color-coordinate-container">
+
     <header class="color-header">
         <h1>Color Coordinate Generator</h1>
     </header>
@@ -97,31 +98,44 @@
                   </option>
                 </select>
               </td>
-              <td class="right-cell">
+                <td class="right-cell">
+                  {{colorOption.coordinates.join(',')}}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-    <div *ngIf="showTables" class="printing-table-container">
+      <div *ngIf="showTables" class="palette">
+        <button *ngFor="let color of colorOptions; let i = index"
+        [style.background]="color.color"
+        [class.active]="selectedColorIndex === i"
+        (click)="selectColor(i)"
+        [attr.aria-label]="'Activate color' + color.color"
+      ></button>
+    </div>
+
+    <div *ngIf="showTables" class="grid-wrapper">
       <table class="painting-table">
         <tbody>
           <tr *ngFor="let row of paintingTableData; let rowIndex = index">
-            <td *ngFor="let cell of row; let colIndex = index" 
+            <td *ngFor="let cell of row; let colIndex = index"
                 (click)="onCellClick(rowIndex, colIndex)"
                 [class.header-cell]="rowIndex === 0 || colIndex === 0"
-                [class.clickable-cell]="rowIndex > 0 && colIndex > 0">
-              {{ cell }}
+                [class.clickable-cell]="rowIndex > 0 && colIndex > 0"
+                [style.backgroundColor]="getCellColor(rowIndex, colIndex)"
+                [style.color]="(rowIndex === 0 || colIndex === 0) ? 'white' : 'transparent'">
+                {{ rowIndex === 0 || colIndex === 0 ? cell : '' }}
             </td>
           </tr>
         </tbody>
       </table>
-      
+    </div>
+
       <div *ngIf="clickedCell" class="cell-coordinate-display">
         {{ clickedCell.column }}{{ clickedCell.row }}
       </div>
-    </div>
+    
 
     <div *ngIf="showTables" class="print">
         <button (click)="printPage()" class="print-button">Print Page</button>
