@@ -223,6 +223,11 @@ input {
     color: #C7CEE6;
 }
 
+.manage-colors-button {
+    background-color: #2B3B5F;
+    color: #C7CEE6;
+}
+
 .button-content h3 {
     margin: 0;
     font-size: 1.3rem;
@@ -235,6 +240,11 @@ input {
 }
 
 .about-button:hover {
+    transform: translateY(-3px);
+    background-color: #1A2638;
+}
+
+.manage-colors-button-button:hover {
     transform: translateY(-3px);
     background-color: #1A2638;
 }
