@@ -124,6 +124,11 @@
     color: #D4C2AF;
 }
 
+.manage-colors-button {
+    background-color: #55260C; 
+    color: #D4C2AF;
+}
+
 .button-content h3 {
     margin: 0;
     font-size: 1.3rem;
@@ -136,6 +141,11 @@
 }
 
 .color-button:hover {
+    transform: translateY(-3px);
+    background-color: #441D09;
+}
+
+.manage-colors-button:hover {
     transform: translateY(-3px);
     background-color: #441D09;
 }

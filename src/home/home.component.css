@@ -75,6 +75,11 @@
     background-color: #103C39;
 }
 
+.manage-colors-button:hover {
+    transform: translateY(-3px);
+    background-color: #103C39;
+}
+
 .accessibility {
     margin: 3rem auto;
     max-width: 800px;

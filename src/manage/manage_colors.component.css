@@ -1,0 +1,235 @@
+:host {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background-color: #D5DEC9;
+}
+
+.color-management-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.color-management-header {
+    order: 2;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.color-management-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #32492C;
+}
+
+.tab-buttons {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-buttons button {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+    border-radius: 4px 4px 0 0;
+    color: #1B3B3B;
+}
+
+.tab-buttons button.active {
+    background: #32492C;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #32492C;
+    margin-bottom: -1px;
+    color:#D5DEC9;
+}
+
+.tab-content {
+    background: #244A4C;
+    padding: 20px;
+    border-radius: 0 4px 4px 4px;
+    border: 1px solid #ddd;
+    color: #D5DEC9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.font-group input, .font-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.color-preview {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+button[type="submit"] {
+    background-color: #D5DEC9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+    background-color: #443D6C;
+    cursor: not-allowed;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert.error {
+    background-color: #8A0000;
+    border-left: 4px solid #8A0000;
+}
+
+.alert.success {
+    background-color: #004D00;
+    border-left: 4px solid #004D00;
+}
+
+.warning {
+    color: #613A00;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #D5DEC9;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto 3rem auto;
+    order: 1;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+}
+
+.nav-button {
+    padding: 1.5rem 1rem; 
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px; 
+    width: 100%; 
+    max-width: 220px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.home-button {
+    background-color: #8A0000;
+    color: #D5DEC9;
+}
+
+.color-button {
+    background-color: #244A4C; 
+    color: #D5DEC9;
+}
+
+.about-button {
+    background-color: #244A4C; 
+    color: #D5DEC9;
+}
+
+.button-content h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #D5DEC9;
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    background-color: #6B0000;
+}
+
+.color-button:hover {
+    transform: translateY(-3px);
+    background-color: #1B3B3B;
+}
+
+.about-button:hover {
+    transform: translateY(-3px);
+    background-color: #1B3B3B;
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.accessibility {
+    margin: 3rem auto;
+    max-width: 800px;
+    text-align: center;
+    order: 4;
+}
+
+.accessibility h2 {
+    color: #443D6C;
+}
+
+.accessibility p {
+    color: #613A00;
+}
+  
+.contrast-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+ }
+  
+.contrast-chip {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid currentColor;
+}
+  
+.contrast-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
