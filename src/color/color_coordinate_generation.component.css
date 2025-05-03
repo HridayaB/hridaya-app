@@ -425,5 +425,11 @@ input {
       display: none;
     }
   }
+  @media print {
+    .grid-cell {
+      background-color: white !important;
+      color: white !important;
+    }
+  }
   
   
