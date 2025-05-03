@@ -419,4 +419,11 @@ input {
       display: inline;
     }
   }
+
+  @media print {
+    .color-radio {
+      display: none;
+    }
+  }
+  
   
