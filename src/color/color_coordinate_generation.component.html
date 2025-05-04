@@ -86,17 +86,21 @@
                 />
                 <select
                   *ngIf="colorOption.selected"
-                  [ngModel]="colorOption.color"
+                  [ngModel]="colorOption.name"
                   (ngModelChange)="onColorChange($event, i)"
                   [attr.aria-label]="'Choose a color for option ' + (i + 1)"
                   class="color-select">
                   <option
                     *ngFor="let color of availableColors(i)"
                     [value]="color"
-                    [disabled]="isColorUsed(color) && color !== colorOption.color">
+                    [disabled]="isColorUsed(color) && color !== colorOption.name">
                     {{ color | titlecase }}
                   </option>
                 </select>
+                <div class="color-label">
+                  {{ colorOption.name | titlecase }} 
+                  <span class="print-only">({{ colorOption.hex }})</span>
+                </div>
               </td>
                 <td class="right-cell">
                   {{colorOption.coordinates.join(',')}}
@@ -108,10 +112,10 @@
 
       <div *ngIf="showTables" class="palette">
         <button *ngFor="let color of colorOptions; let i = index"
-        [style.background]="color.color"
+        [style.background]="color.name"
         [class.active]="selectedColorIndex === i"
         (click)="selectColor(i)"
-        [attr.aria-label]="'Activate color' + color.color"
+        [attr.aria-label]="'Activate color' + color.name"
       ></button>
     </div>
 
@@ -120,6 +124,7 @@
         <tbody>
           <tr *ngFor="let row of paintingTableData; let rowIndex = index">
             <td *ngFor="let cell of row; let colIndex = index"
+                class="'grid-cell"
                 (click)="onCellClick(rowIndex, colIndex)"
                 [class.header-cell]="rowIndex === 0 || colIndex === 0"
                 [class.clickable-cell]="rowIndex > 0 && colIndex > 0"

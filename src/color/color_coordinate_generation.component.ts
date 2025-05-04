@@ -23,11 +23,19 @@ export class ColorCoordinateGenerationComponent {
     coordinateForm: FormGroup;
     showTables = false;
     colorPalette = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'gray', 'brown', 'black', 'teal'];
-    colorOptions = this.colorPalette.map((color, index) => ({
-        color: color,
-        selected: index === 0,
-        coordinates: [] as string[]
-    }));
+    colorOptions = [
+        { name: 'red', hex: '#FF0000', selected: true, coordinates: [] as string[] },
+        { name: 'orange', hex: '#FFA500', selected: false, coordinates: [] as string[] },
+        { name: 'yellow', hex: '#FFFF00', selected: false, coordinates: [] as string[] },
+        { name: 'green', hex: '#008000', selected: false, coordinates: [] as string[] },
+        { name: 'blue', hex: '#0000FF', selected: false, coordinates: [] as string[] },
+        { name: 'purple', hex: '#800080', selected: false, coordinates: [] as string[] },
+        { name: 'gray', hex: '#808080', selected: false, coordinates: [] as string[] },
+        { name: 'brown', hex: '#A52A2A', selected: false, coordinates: [] as string[] },
+        { name: 'black', hex: '#000000', selected: false, coordinates: [] as string[] },
+        { name: 'teal', hex: '#008080', selected: false, coordinates: [] as string[] }
+    ];
+    
     columnHeaders: string[] = [];
     rowIndices: number[] = [];
     selectedColorIndex = 0;

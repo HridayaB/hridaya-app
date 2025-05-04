@@ -406,3 +406,30 @@ input {
     height: 60px;
     width: auto;
 } 
+
+
+@media screen {
+    .print-only {
+      display: none;
+    }
+  }
+  
+  @media print {
+    .print-only {
+      display: inline;
+    }
+  }
+
+  @media print {
+    .color-radio {
+      display: none;
+    }
+  }
+  @media print {
+    .grid-cell {
+      background-color: white !important;
+      color: white !important;
+    }
+  }
+  
+  
