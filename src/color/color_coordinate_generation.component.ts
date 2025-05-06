@@ -88,9 +88,12 @@ export class ColorCoordinateGenerationComponent {
         this.colorOptions = [];
 
         for (let i = 0; i < numColors; i++) {
+            const colorName = this.colorPalette[i % this.colorPalette.length];
+            const hexCode = this.colorOptions.find(opt => opt.name === colorName)?.hex || '#000000'; // Default to black if not found
             this.colorOptions.push({
+                name: colorName,
+                hex: hexCode,
                 selected: i === 0,
-                color: this.colorPalette[i % this.colorPalette.length],
                 coordinates: [] as string[]
             });
         }
@@ -127,7 +130,7 @@ export class ColorCoordinateGenerationComponent {
 
         const column = this.paintingTableData[0][col];
         const key = `${column}${row}`;
-        const selectedColor = this.colorOptions[this.selectedColorIndex].color;
+        const selectedColor = this.colorOptions[this.selectedColorIndex].name;
 
         this.cellColors[key] = this.selectedColorIndex;
 
@@ -165,17 +168,17 @@ export class ColorCoordinateGenerationComponent {
         return this.colorPalette.filter((color) => {
         const usedColors = this.colorOptions
             .filter((_, i) => i !== currentIndex)
-            .map((opt) => opt.color);
-        return !usedColors.includes(color) || this.colorOptions[currentIndex].color === color;
+            .map((opt) => opt.name);
+        return !usedColors.includes(color) || this.colorOptions[currentIndex].name === color;
         });
     }
     
     isColorUsed(color: string): boolean {
-        return this.colorOptions.some((opt) => opt.color === color);
+        return this.colorOptions.some((opt) => opt.name === color);
     }
     
     onColorChange(newColor: string, index: number) {
-        this.colorOptions[index].color = newColor;
+        this.colorOptions[index].name = newColor;
     }
 
     @HostBinding('class.tables-visible') get tablesVisible() {
@@ -192,7 +195,7 @@ export class ColorCoordinateGenerationComponent {
         const colorIndex = this.cellColors[key];
     
         return colorIndex !== undefined
-            ? this.colorOptions[colorIndex].color
+            ? this.colorOptions[colorIndex].name
             : 'white';
     }
 }
