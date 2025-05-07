@@ -244,7 +244,7 @@ input {
     background-color: #1A2638;
 }
 
-.manage-colors-button-button:hover {
+.manage-colors-button:hover {
     transform: translateY(-3px);
     background-color: #1A2638;
 }
@@ -353,6 +353,16 @@ input {
     @page {
         size: auto;
         margin: 5mm;
+    }
+
+     .logo {
+        width: 7% !important;
+        height: auto !important;
+    }
+
+    .painting-table td, .painting-table th {
+        background-color: white !important;
+        border: 2px solid black !important;
     }
 }
 
