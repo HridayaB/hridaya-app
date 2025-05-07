@@ -13,7 +13,7 @@ interface Color {
 })
 
 export class ColorService {
-  private apiUrl = 'api/colors'; 
+  private apiUrl = 'https://www.cs.colostate.edu/~hridayab/api/colors.php'; 
 
   constructor(private http: HttpClient) { }
 
@@ -26,10 +26,10 @@ export class ColorService {
   }
 
   updateColor(color: Color): Observable<Color> {
-    return this.http.put<Color>(`${this.apiUrl}/${color.id}`, color);
+    return this.http.put<Color>(`${this.apiUrl}?id=${color.id}`, color);
   }
 
   deleteColor(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}?id=${id}`);
   }
 }
