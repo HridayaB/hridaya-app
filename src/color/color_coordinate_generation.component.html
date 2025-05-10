@@ -60,11 +60,11 @@
         </div>
         <div class="form-group">
             <label for="colors">Colors</label>
-            <input type="number" formControlName="colors" min="1" max="10">
+            <input type="number" formControlName="colors" [min]="1" [max]="maxAvailableColors">
             <div *ngIf="colors?.invalid && (colors?.dirty || colors?.touched)" class="error-messages">
               <small *ngIf="colors?.errors?.['required']">Colors is required.</small>
               <small *ngIf="colors?.errors?.['min']">Minimum value is 1.</small>
-              <small *ngIf="colors?.errors?.['max']">Maximum value is 10.</small>
+              <small *ngIf="colors?.errors?.['max']">Maximum value is {{ maxAvailableColors }}.</small>
             </div>
         </div>
 
