@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { colorConfig } from './color_coordinate_generation.config';
 import { throws } from 'assert';
 import { HostBinding } from '@angular/core';
+import { ColorService } from "../manage/color.service";
 
 interface CellCoordinate {
     row: number;
@@ -36,6 +37,7 @@ export class ColorCoordinateGenerationComponent {
         { name: 'teal', hex: '#008080', selected: false, coordinates: [] as string[] }
     ];
     
+    maxAvailableColors: number = 10;
     columnHeaders: string[] = [];
     rowIndices: number[] = [];
     selectedColorIndex = 0;
@@ -44,7 +46,7 @@ export class ColorCoordinateGenerationComponent {
 
     cellColors: { [key: string]: number} ={}
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private colorService: ColorService) {
         this.coordinateForm = this.fb.group({
             rows: [
                 5,
@@ -59,6 +61,7 @@ export class ColorCoordinateGenerationComponent {
                 [Validators.required, Validators.min(1), Validators.max(10)]
             ]
         });
+        this.loadDBColors();
     }
 
     get rows() {
@@ -198,4 +201,25 @@ export class ColorCoordinateGenerationComponent {
             ? this.colorOptions[colorIndex].name
             : 'white';
     }
+
+    loadDBColors(): void {
+        this.colorService.getColors().subscribe(colors => {
+            this.colorPalette = colors.map(c => c.name);
+            this.colorOptions = colors.map((c, index) => ({
+                name: c.name,
+                hex: c.hexValue,
+                selected: index === 0,
+                coordinates : []
+            }));
+            const maxColors = this.colorOptions.length;
+            this.maxAvailableColors = this.colorOptions.length;
+            this.coordinateForm.get('colors')?.setValidators([
+                Validators.required, 
+                Validators.min(1),
+                Validators.max(maxColors)
+            ]);
+            this.coordinateForm.get('colors')?.updateValueAndValidity();
+        });
+    }
+
 }
