@@ -97,7 +97,7 @@ input {
 }
 
 .color-table {
-    width: 99%;
+    width: 100%;
     border-collapse: collapse;
     border: 1px solid black;
     margin-left: auto;
@@ -144,7 +144,7 @@ input {
 }
 
 .painting-table {
-    width: auto;
+    width: 100%;
     margin: 0 auto;
     border-collapse: collapse;
     border: 2px solid #2B3B5F;
